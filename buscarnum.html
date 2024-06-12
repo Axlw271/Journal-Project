@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <title>Buscar números</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+        <h1 id="LSM">Lengua de señas (LSM)</h1>
+            <a id="back" href="home.php">Inicio</a>
+      </header>
+  <div id="container">
+    <h3>Esta página te ayudará a encontrar señas de números del 1 al 100 en Lengua de Señas Mexicana (LSM)</h3>
+    <div class="form-group">
+      <div class="search-bar">
+        <input type="text" id="searchInput" class="form-control" placeholder="Ingresa aquí" onkeydown="handleEnter(event)">
+        <button type="button" class="btn btn-primary" onclick="buscarImagen()">Buscar</button>
+      </div>
+    </div>
+    
+    <div id="imageContainer"></div>
+  </div>
+  <script>
+    const searchInput = document.getElementById('searchInput');
+    const imageContainer = document.getElementById('imageContainer');
+
+    searchInput.addEventListener('keypress', function (event) {
+      if (event.key === 'Enter') {
+        buscarImagen();
+      }
+    });
+    function buscarImagen() {
+      const searchTerm = searchInput.value.toLowerCase();
+      imageContainer.innerHTML = '';
+      const imagenes = {
+                "1": "img/num/1.jpg",
+                "2": "img/num/2.jpg",
+                "3": "img/num/3.jpg",
+                "4": "img/num/4.jpg",
+                "5": "img/num/5.jpg",
+                "6": "img/num/6.jpg",
+                "7": "img/num/7.jpg",
+                "8": "img/num/8.jpg",
+                "9": "img/num/9.jpg",
+                "10": "img/num/10.jpg",
+                "11": "img/num/11.jpg",
+                "12": "img/num/12.jpg",
+                "13": "img/num/13.jpg",
+                "14": "img/num/14.jpg",
+                "15": "img/num/15.jpg",
+                "16": "img/num/16.jpg",
+                "17": "img/num/17.jpg",
+                "18": "img/num/18.jpg",
+                "19": "img/num/19.jpg",
+                "20": "img/num/20.jpg",
+                "30": "img/num/30.jpg",
+                "40": "img/num/40.jpg",
+                "50": "img/num/50.jpg",
+                "60": "img/num/60.jpg",
+                "70": "img/num/70.jpg",
+                "80": "img/num/80.jpg",
+                "90": "img/num/90.jpg",
+                "100": "img/num/100.jpg",
+      };
+
+      if (imagenes[searchTerm]) {
+        // Si el término coincide con una imagen, se muestra
+        const imgElement = document.createElement('img');
+        imgElement.src = imagenes[searchTerm];
+        imgElement.alt = searchTerm;
+        imgElement.style.maxWidth = "250px";
+        imgElement.style.height = "auto";
+        const table = document.createElement('table');
+        const tr = document.createElement('tr');
+        const td = document.createElement('td');
+        td.appendChild(imgElement);
+        tr.appendChild(td);
+        table.appendChild(tr);
+        imageContainer.appendChild(table);
+      } else {
+        // Verifica si es decena
+        const decena = Math.floor(searchTerm / 10) * 10;
+
+        if (decena >= 20 && decena <= 100 && imagenes[decena]) {
+          // Si la decena tiene una imagen, la muestra
+          const imgDecena = document.createElement('img');
+          imgDecena.src = imagenes[decena];
+          imgDecena.alt = decena;
+          if(window.innerWidth<"600")
+              imgDecena.style.maxWidth = window.innerWidth/2.1+"px";
+        else    
+            imgDecena.style.maxWidth = "250px";
+          imgDecena.style.height = "auto";
+
+          const table = document.createElement('table');
+          const tr = document.createElement('tr');
+          const td = document.createElement('td');
+          td.appendChild(imgDecena);
+          tr.appendChild(td);
+          table.appendChild(tr);
+          imageContainer.appendChild(table);
+
+          if (searchTerm % 10 !== 0 && imagenes[searchTerm % 10]) {
+            // Si la unidad tiene una imagen, la muestra
+            const imgUnidad = document.createElement('img');
+            imgUnidad.src = imagenes[searchTerm % 10];
+            imgUnidad.alt = searchTerm % 10;
+            if(window.innerWidth<"600")
+                imgUnidad.style.maxWidth = window.innerWidth/2.1+"px";
+            else
+                imgUnidad.style.maxWidth = "250px"
+            imgUnidad.style.height = "auto";
+
+            const tdUnidad = document.createElement('td');
+            tdUnidad.appendChild(imgUnidad);
+            tr.appendChild(tdUnidad);
+            imageContainer.appendChild(table);
+          }
+        }
+      }
+    }
+  </script>
+</body>
+</html>
+
+
+
+
+

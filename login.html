@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lengua de señas (LSM)</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Swiper JS -->
+  <script src="http://www.fismat.umich.mx/~dreyes/swiper-blunde.min.js"></script> 
+  <!--swiper css-->
+  <link rel="stylesheet" href="http://www.fismat.umich.mx/~dreyes/swiper-blunde.min.css">
+</head>
+<body>
+  <header>
+    <h1 id="LSM">Lengua de señas (LSM)</h1>
+    <nav>
+        <ul class="menu">
+          <li><a href="dato.html">Datos curiosos</a></li>
+          <li><a href="buscarnum.html">Buscar numeros</a></li>
+          <li><a href="letras.html">Buscar letras</a></li>
+          <li><a href="index.html">Inicio</a></li>
+        </ul>    
+    </nav>
+    <div onclick="menu()" class="menu-toggle">&#9776;</div>
+  </header>
+  <div class="login">
+    <h2>Iniciar Sesión</h2>
+    <form id="loginForm" action="login.php" method="post">
+        <input type="text" name="user" placeholder="Nombre de Usuario">
+        <br>
+        <input type="password" name="pass" placeholder="Contraseña">
+        <br>
+        <button type="submit" >Iniciar Sesión</button>
+    </form>
+    <a href="register.html">Registrarse</a>
+    </div>
+</body>
+<script src="script.js"></script>  
+<script>
+  error=location.search.split('error=')[1]
+  if(error!=undefined){
+    error=error.replaceAll("%20"," ")
+    alert(error)
+  }
+</script>
+</html>

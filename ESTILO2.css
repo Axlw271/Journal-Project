@@ -1,0 +1,204 @@
+/* Estilos generales */
+body {
+    width: auto;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #3498db;
+    background-color: #ecf0f1;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;  
+}
+
+hr {
+    display: none; /* O ajusta según sea necesario */
+}
+
+h5 {
+    text-align: left;
+    margin: 10px;
+    color:black;       
+}
+
+p {
+    font-weight: bold; /* Hace que el texto del párrafo esté en negritas */
+  }
+
+video{
+    height:45%;
+    margin:0px;
+    padding:;
+}
+/* Estilos para el encabezado */
+header {
+    width: 100%;
+    background-color: #3498db;
+    position: static;
+    display: flex;
+    justify-content: space-evenly; 
+    align-items: center;
+}
+
+.logo {
+    color: #FFF;
+}
+
+a:hover, 
+#overlay:hover {
+    background: #6fb8e8;
+    color: white;
+    transform: scale(1.1);
+}
+
+/* Estilos para botones y enlaces */
+a, 
+.highlight-on-hover, 
+#overlay {
+    display: inline-block;
+    padding: 5px;
+    color:white;
+    background-color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    transform-origin: center;
+    margin-top: 10px;
+}
+
+a {
+    cursor: pointer;
+    width: auto;
+    height: auto;
+    position: static;
+    border-radius: 6px;
+    border: 1px solid #3498db;
+    
+}
+
+button {
+    margin-top: 30px;
+}
+
+
+.input-container {
+    flex: 1;
+    margin-left: 20px;
+}
+
+/* Imágenes */
+.image-container {
+    display: flex;
+    justify-content: center;
+    position: static;
+    margin: 10px auto 0;
+}
+
+.image-container img {
+    max-width: 50%;
+    height: auto;
+}
+
+.image {
+    max-width: 50%;
+    max-height: 80vh;
+}
+
+/* Tabla */
+table {
+    width: auto;
+    margin: 0 auto;
+    border-spacing: 2px;
+    position: fixed;
+    display: flex;
+    flex-direction: row-center;
+    margin-top: 10px;
+}
+
+tr {
+    display: flex;
+    justify-content: center;
+}
+
+td {
+    display: flex;
+    justify-content: center;
+}
+
+table video {
+    max-width: 100%;
+    height: 200px;
+    display: block;
+    margin: 0 2px;
+}
+
+/* Resalte en hover */
+.highlight-on-hover {
+    transition: background-color 0.3s;
+}
+
+.highlight-on-hover:hover {
+    background-color: #3498db;
+}
+
+/* Contenedor de imágenes */
+.image-container-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+/* Correcto o incorrecto */
+/* Correcto o incorrecto */
+#overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    transition: background-color 0.5s;
+}
+
+#overlay.correct {
+    color: #26ac26;
+    animation: correctAnimation 1s ease-out;
+}
+
+@keyframes correctAnimation {
+    0% {
+        transform: scale(1);
+        opacity: 0.2;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0.2;
+    }
+}
+
+
+/* Instrucciones */
+.container-wrapper {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.home-box {
+    max-width: 100%;
+    background-color:rgba(252, 252, 79, 0.555);
+    position: static;
+    margin-top: 10px;
+    border-radius: 10px;
+    border: 1px solid rgba(252, 252, 79, 0.555);
+    box-shadow: 5px 5px 10px rgba(0.1, 0.1, 0.1, 0.1);
+}

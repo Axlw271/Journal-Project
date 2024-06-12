@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lengua de señas</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+ 
+</head>
+<body>
+    <header>
+        <h1 id="LSM">Lengua de señas (LSM)</h1>
+            <a id="back" href="home.php">Inicio</a>
+      </header>
+  <div id="container">
+    <h1 class="mt-4">Traductor a señas</h1>
+
+    <div id="result" class="mt-4"></div>
+
+    <div class="form-group">
+      <div>
+        <h5>Esta página te ayudará a deletrear palabras en LSM</h5>
+      </div>
+      <label for="wordInput">Ingresa tu palabra a deletrear:</label>
+      <div class="search-bar">
+        <input type="text" id="wordInput" class="form-control" placeholder="Ingresa una palabra" onkeydown="handleEnter(event)">
+        <button type="button" class="btn btn-primary" onclick="searchWord()">Buscar</button>
+      </div>
+    </div>
+
+    <div class="image-box"></div>
+
+  </div>
+
+  <script>
+   const dictionary = {
+    a: "img/abc/a.jpg",
+      b: "img/abc/b.jpg",
+      c: "img/abc/c.jpg",
+      d: "img/abc/d.jpg",
+      e: "img/abc/e.jpg",
+      f: "img/abc/f.jpg",
+      g: "img/abc/g.jpg",
+      h: "img/abc/h.jpg",
+      i: "img/abc/i.jpg",
+      j: "img/abc/j.jpg",
+      k: "img/abc/k.jpg",
+      l: "img/abc/l.jpg",
+      m: "img/abc/m.jpg",
+      n: "img/abc/n.jpg",
+      ñ: "img/abc/ñ.jpg",
+      o: "img/abc/o.jpg",
+      p: "img/abc/p.jpg",
+      q: "img/abc/q.jpg",
+      r: "img/abc/r.jpg",
+      s: "img/abc/s.jpg",
+      t: "img/abc/t.jpg",
+      u: "img/abc/u.jpg",
+      v: "img/abc/v.jpg",
+      w: "img/abc/w.jpg",
+      x: "img/abc/x.jpg",
+      y: "img/abc/y.jpg",
+      z: "http://www.fismat.umich.mx/~mapeje/lsm/image/abc/z.jpg"
+    };
+
+    function searchWord() {
+      const wordInput = document.getElementById('wordInput');
+      const word = wordInput.value.toLowerCase();
+      const resultDiv = document.getElementById('result');
+      const imageBox = document.querySelector('.image-box');
+
+      resultDiv.innerHTML = ''; // Limpiar resultados anteriores
+
+      imageBox.innerHTML = ''; // Limpiar imágenes anteriores
+
+      for (let i = 0; i < word.length; i++) {
+        const letter = word[i];
+
+        if (dictionary.hasOwnProperty(letter)) {
+          const img = document.createElement('img');
+          img.src = dictionary[letter];
+          img.style.maxWidth=window.innerWidth/(word.length+1)+"px";
+          img.classList.add('img-fluid');
+          imageBox.appendChild(img);
+        }
+      }
+    }
+
+    function handleEnter(event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        searchWord();
+      }
+    }
+  </script>
+</body>
+</html>
+
+

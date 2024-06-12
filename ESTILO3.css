@@ -1,0 +1,157 @@
+/* Estilos generales */
+body {
+    width: auto;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #3498db;
+    background-color: #ecf0f1;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;  
+}
+
+h5 {
+    text-align: left;
+    margin: 10px;
+    color:black; 
+}
+
+p {
+    font-weight: bold; /* Hace que el texto del párrafo esté en negritas */
+  }
+
+
+/* Estilos para el encabezado */
+header {
+    width: 100%;
+    background-color: #3498db;
+    position: static;
+    display: flex;
+    justify-content: space-evenly; 
+    align-items: center;
+}
+
+.logo {
+    color: #FFF;
+}
+
+
+button#submitButton:hover, 
+a:hover, 
+#overlay:hover {
+    background: #6fb8e8;
+    color: white;
+    transform: scale(1.1);
+}
+
+/* Estilos para botones y enlaces */
+
+button#submitButton, a, 
+#overlay {
+    padding: 8px;
+    display: inline-block;
+    color:white;
+    background-color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    transform-origin: center;
+    margin-top: 10px;
+}
+
+button#submitButton, 
+a {
+    cursor: pointer;
+    width: auto;
+    height: auto;
+    position: static;
+    border-radius: 6px;
+    border: 1px solid #3498db;
+    
+}
+
+button {
+    margin-top: 30px;
+}
+
+.input-container {
+    flex: 1;
+    margin-left: 20px;
+}
+
+/* Contenedor principal */
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* Estilos específicos para la Actividad 3 */
+
+textarea {
+    width: calc(100% - 10px);
+    height: 40px;
+    font-size: 16px;
+    margin-bottom: 16px;
+    margin-top: 30px;
+    border-radius: 6px;
+    border: 1px solid #3498db;
+    box-sizing: border-box;
+    padding: 10px;
+    resize: none;
+}
+
+.image-container {
+    display: flex;
+    max-width: 40%;
+    overflow: hidden;
+}
+
+.image-container video {
+    margin-top: 10px;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Correcto o incorrecto */
+#overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    transition: background-color 0.5s;
+}
+
+#overlay.correct {
+    color: #26ac26;
+}
+
+#overlay.incorrect {
+    color: rgb(207, 54, 54);
+}
+
+/* Instrucciones */
+.container-wrapper {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.home-box {
+    max-width: 100%;
+    background-color:rgba(252, 252, 79, 0.555);
+    position: static;
+    margin-top: 10px;
+    border-radius: 10px;
+    border: 1px solid rgba(252, 252, 79, 0.555);
+    box-shadow: 5px 5px 10px rgba(0.1, 0.1, 0.1, 0.1);
+}
